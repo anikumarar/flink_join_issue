@@ -1,2 +1,2 @@
-# edw_flink_join_isssue
-edw_flink_join_isssue
+# flink_join_isssue
+flink_join_isssue
