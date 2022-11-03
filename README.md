@@ -5,7 +5,7 @@ This project attempts to test flink's tumbling window joining capabilities.
 
 
 ### Stream Description
-We are using kafka for the data stream here. We have two input topics *employee* and *expense* and we are joining the two topics using uuid and producing the final result into *employeexpense* topic.
+Kafka is used for streaming.Two input topics are **employee** and **expense** and The two topics are joined using uuid and producing the final result into **employeexpense** topic.
 
 ### Sample records
 
@@ -29,7 +29,7 @@ We are using kafka for the data stream here. We have two input topics *employee*
 {"expense_timestamp":"2022-11-03T14:14:18.655","employee_timestamp":"2022-11-03T14:14:18.571","correlation_time":"2022-11-03T14:14:40.202","expense":6,"uuid":"94429253-2109-4706-85f6-5af8c591bd8f","salary":29}
 {"expense_timestamp":"2022-11-03T14:14:19.656","employee_timestamp":"2022-11-03T14:14:18.571","correlation_time":"2022-11-03T14:14:40.202","expense":10,"uuid":"cce60bab-24d2-466b-9ce1-dde8a0076b89","salary":18}
 
-We have records out of order and the timestamps can repeat for multiple events. We have simulated the same using **MessagesGeneratorSameMilliSecond** class. We are creating the *employee* record and using the same current timestamp for 100 records and then keep those records into a BlockingQueue and then use the same records for the expense with randomly increasing the timstamp from 0 to 3 seconds.Idea here is to see what happens when different records have same event timestamp and they are out of order. Please check the code for further reference.
+We have records that are out of order and the timestamps can repeat for multiple events. We have simulated the same using **MessagesGeneratorSameMilliSecond** class. We are creating the **employee** record and using the same current timestamp for 100 records and then keep those records into a BlockingQueue and then use the same records(uuid) for the expense with randomly increasing the timstamp from 0 to 3 seconds.Idea here is to observe what happens when different records have same event timestamp and they are out of order in the same window. Please check the code for further reference.
 
 ### Observations
 
