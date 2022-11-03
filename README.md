@@ -44,6 +44,20 @@ TIME                |	COUNT_NOT_JOIN_REC(same window)	| COUNT_NOT_JOIN_REC(diff 
 2022-11-02 14:07:35	|0	                              |89	                              |407	                        |0	
 2022-11-02 14:07:40	|0	                              |93	                              |296	                        |0	
 
+### How to run
+
+Create the kafka topics with 12 partitions (to explore the out or orderness)
+
+bin/kafka-topics.sh --create --topic employee --bootstrap-server localhost:9092 --partitions 12
+bin/kafka-topics.sh --create --topic expense --bootstrap-server localhost:9092 --partitions 12
+bin/kafka-topics.sh --create --topic employeexpense --bootstrap-server localhost:9092 --partitions 12
+
+Once you create the topics run the Main.java using your favorite editor.
+
+### Libraries Used
+
+Apache flink : 1.13.2
+Java version : 11.0.14
 
 
 
