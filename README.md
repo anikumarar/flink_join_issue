@@ -35,31 +35,15 @@ We have records out of order and the timestamps can repeat for multiple events. 
 
 We are seeing missing records for each window. We have tried to increase the bounded out of orderness parameters but its not helping. We brought the data from each of the topics and tried to join them and as you can see for every window interval we are missing records
 
-TIME  |	COUNT_NOT_JOINING_RECORDS(same window)	| COUNT_NOT_JOINING_RECORDS(diff window)	| COUNT_JOINING_RECORDS(same window) |	
-:---: | :---:                                   | :---:                                   | :---:                              |
-COUNT_JOINING_RECORDS(diff window)
-:---:
+TIME                |	COUNT_NOT_JOIN_REC(same window)	| COUNT_NOT_JOIN_REC(diff window)	| COUNT_JOIN_REC(same window) |	COUNT_JOIN_REC(diff window)
+:---:               | :---:                           | :---:                           | :---:                       |:---:
+2022-11-02 14:07:15	|0	                              |0	                              |102                          |0	
+2022-11-02 14:07:20 |0	                              |98	                              |397	                        |0	
+2022-11-02 14:07:25	|0	                              |103                              |397                          |0	
+2022-11-02 14:07:30	|0	                              |103                              |411	                        |0	
+2022-11-02 14:07:35	|0	                              |89	                              |407	                        |0	
+2022-11-02 14:07:40	|0	                              |93	                              |296	                        |0	
 
-2022-11-02 14:07:15	|0	|0	|102 |	0	
-2022-11-02 14:07:20 |	0	|98	|397	|0	
-2022-11-02 14:07:25	|0	|103 |	397|	0	
-2022-11-02 14:07:30	|0	|103|	411	|0	
-2022-11-02 14:07:35	|0	|89	|407	|0	
-2022-11-02 14:07:40	|0	|93	|296	|0	
-2022-11-02 14:07:45	|0	|104	|396	|0	
-2022-11-02 14:07:50	|0	|104	|410	|0	
-2022-11-02 14:07:55	|0	|90	|400	|0	
-2022-11-02 14:08:00	|0	|100|	389	|0	
-2022-11-02 14:08:05	|0	|111	|299	|0	
-2022-11-02 14:08:10	|0	|101	|392	|0	
-2022-11-02 14:08:15	|0	|108	|400	|0	
-2022-11-02 14:08:20	|0	|100	|410	|0	
-2022-11-02 14:08:25	|0	|90	|398	|0	
-2022-11-02 14:08:30	|0	|102|	293	|0	
-2022-11-02 14:08:35	|0	|107|	396	|0	
-2022-11-02 14:08:40	|0	|104	|400	|0	
-2022-11-02 14:08:45	|0	|100|	398	|0	
-2022-11-02 14:08:50	|0	|102|	364	|0	
 
 
 
